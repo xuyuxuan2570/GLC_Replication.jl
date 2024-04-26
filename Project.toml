@@ -1,0 +1,7 @@
+name = "glc_replication"
+uuid = "51fab317-7a90-40bb-b5c5-aa40c430eb1b"
+authors = ["Peter Tkatchenko <peteratkatchenko@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+PkgTemplates = "14b8a8f1-9102-5b29-a752-f990bacb7fe1"
