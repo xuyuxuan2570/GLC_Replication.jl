@@ -1,5 +1,7 @@
 ## Overview
-This code base contains all the scripts needed to execute the economic model discussed in the paper. These scripts are used to set up the model parameters, execute the simulation and visualize the results, which are used to simulate various economic phenomena during China's economic transition as discussed in the paper.
+The paper we replicated is:
+[Growing Like China](https://www.jstor.org/stable/pdf/41038787.pdf?casa_token=5TRRgOIMQUwAAAAA:iVWOCu1JLzX5JQy2T2r9Tt9uXl7Z-QMtq3em5ARvBx2A2GD_6kNZ1Bn59fD2NWlJNoQUxO6I5pcKMVmLYTngAwDwjh7EMMXvuQTWPsbmvoVMvSiSd38)
+These scripts are used to set up the model parameters, perform simulations and visualize the results, which are used to simulate various economic phenomena during China's economic transition as discussed in the paper.
 
 ## Scripts Description and Relationship
 
