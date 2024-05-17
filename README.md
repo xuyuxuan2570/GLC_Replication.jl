@@ -442,9 +442,4 @@ The function `fun_saving_pre_transition_E` simulates the life-cycle savings and 
 5. **Output**:
     - Returns a vector with `savings`, `wealth_prime`, `sr`, and `consumption`.
 
-## Main Code: Wealth and Consumption Simulation
-
-### For Workers (Existing and Newly Born)
-
-The main code snippets iterate over each time period and call `fun_saving_F_existing` and `fun_saving_F_newly_born` to compute the wealth and consumption profiles for existing and newly born workers, respectively. The results are stored in arrays for further analysis.
 
