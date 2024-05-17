@@ -61,29 +61,44 @@ To be more specific,
    - Finally, `six_panel.jl` visualizes the results of the economic model and its predictions.
   
 # Figures
+
 ![Replication of the result](assets/img/figure_2.png)
+
 - **Model Prediction**: Investment and saving rates show fluctuations.
 - **Actual Data**: The actual data also shows similar trends, though the model exhibits larger fluctuations in some periods.
+  
 ![Replication of the result](assets/img/figure_3.png)
+
 - **Model Prediction**: The model predicts a steady increase in the Net Export GDP Ratio over time, suggesting that the economy becomes more export-oriented and improves its trade balance in the first figure. The share of private employment gradually increases, reflecting the growing importance of the private sector during economic transformation in the second figure.
 - **Actual Data**: The actual data also shows an increasing trend in the Net Export GDP Ratio, though there are some fluctuations. The model captures the general upward trend but may overestimate the growth rate in certain periods in figure 1. The actual data also shows a rising trend, though the model predicts a slightly faster growth rate in figure 2.
+  
 ![Replication of the result](assets/img/figure_4.png)
+
 - **Model Prediction**: The capital output ratio initially decreases, then increases, and eventually stabilizes.
 - **Actual Data**: The trend in actual data is similar, though the model predicts a higher stable level.
+  
 ![Replication of the result](assets/img/figure_5.png)
+
 - **Model Prediction**: The TFP growth rate rises rapidly initially and then gradually decreases.
 - **Actual Data**: The actual data shows a similar trend, but the model predicts a higher peak.
+  
 ![Replication of the result](assets/img/figure_6.png)
+
 - **Model Prediction**: Iceberg costs gradually decrease.
 - **Actual Data**: The trend in actual data is consistent, though the model predicts a faster decline.
+  
 ![Replication of the result](assets/img/figure_7.png)
+
 - **Model Prediction**: The model predicts that the rate of return to capital initially increases, reaches a peak, and then gradually decreases in figure 1. The model predicts a gradual increase in the labor share over time, indicating that a larger portion of national income is being allocated to workers in figure 2.
 - **Actual Data**: The actual data shows a similar trend, with the rate of return to capital increasing initially and then stabilizing or slightly declining in figure 1. The actual data shows a similar upward trend in labor share, reflecting improvements in wages and labor conditions in figure 2.
+  
 ![Replication of the result](assets/img/figure_8.png)
+
 - **Model Prediction**: The model predicts a gradual increase in the private employment share over time, reflecting a transition towards a more market-oriented economy in figure 1. The model predicts a high initial growth rate in private employment share, which eventually slows down as the economy stabilizes and the private sector matures in figure 2.
 - **Actual Data**: The actual data shows an upward trend in private employment share, although the model may predict a slightly faster increase in figure 1. The actual data shows a similar trend, with rapid growth in the early stages of economic transition, followed by a gradual deceleration in figure 2.
 
 ![Replication of the result](assets/img/figure_1.png "what we replicate")
+
 The six-panel figure presents a comparison of various economic indicators between the model's predictions and actual data.
 
 #### Panel 1: Rate of Return in F Firms
@@ -129,8 +144,10 @@ The model effectively captures the trends of key economic variables such as econ
 
 # Comparison
 Then, we compare our replication results and the original results. We can see from the two figures that our replication is mostly the same as the paper had. So the result would be similar. 
+
 ![Replication of the result](assets/img/six_panel.png "what we replicate")
 ![Transition in the Calibrated Economy](assets/img/paper_six_panels_2.png "the original result from paper")
+
 This figure depicts the evolution of key variables during and after the economic transition in a calibrated economic model. The solid and dashed lines in the figure represent the simulation results of the model and the actual data, respectively. The figure illustrates the speed of employment reallocation, the evolution of the savings rate (in a U-shaped dynamic), and the trend in the foreign exchange surplus. The increase in the savings rate is associated with a higher savings rate for E-firm managers, which is the main mechanism driving the increase in savings. At the same time, the model accurately predicts the trend in the foreign exchange surplus, albeit with a slight bias in some years. These demonstrate the degree of agreement and discrepancy between the model and China's actual economic data.
 
 Now we are going to details about the function and the logic.
@@ -431,16 +448,3 @@ The function `fun_saving_pre_transition_E` simulates the life-cycle savings and 
 
 The main code snippets iterate over each time period and call `fun_saving_F_existing` and `fun_saving_F_newly_born` to compute the wealth and consumption profiles for existing and newly born workers, respectively. The results are stored in arrays for further analysis.
 
-#### Main Code Logic for Existing Workers
-
-```julia
-for ii = 2:age_max
-    result = fun_saving_F_existing([ii, wealth_pre[ii]], dictmain, dictopt)
-    wealth = result[:wealth]
-    consumption = result[:consumption]
-
-    for tt = 1:age_max-ii+1
-        wealth_F[tt, ii+tt-1] = wealth[ii+tt-1]
-        consumption_F[tt, ii+tt-1] = consumption[ii+tt-1]
-    end
-end
