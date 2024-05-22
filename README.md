@@ -6,7 +6,7 @@ These scripts are used to set up the model parameters, perfrom simulation and vi
 
 ## Scripts Description and Relationship
 
-### `main_parameter.jl`
+### `parameter.jl`
 - **Purpose**: Initializes the basic parameters and global variables of the economic model and is responsible for running the entire replication process.
 - **Importance**: Provides the parameter base for all calculations in the model and automates the entire process by introducing additional scripts to generate all necessary output files.
 
