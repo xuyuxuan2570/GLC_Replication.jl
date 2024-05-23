@@ -4,7 +4,6 @@ using Statistics
 using Plots
 using MAT
 using JLD2
-using Statistics 
 using CSV 
 using DataFrames 
 
