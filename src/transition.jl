@@ -11,7 +11,7 @@ iter = 1
 # initial_guess
 
 # true results
-data_result = matread("C:\\Users\\peter\\.julia\\dev\\glc_replication\\replication_package\\data_appendix\\matlab\\matlab\\data_result.mat")
+data_result = matread("/Users/xuyuxuan/Desktop/po/computer econ/project/112395-V1/matlab/data_result.mat")
 
 m_t = transpose(data_result["m_t"])
 w_t = transpose(data_result["w_t"])
