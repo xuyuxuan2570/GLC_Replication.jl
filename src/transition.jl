@@ -11,7 +11,11 @@ iter = 1
 # initial_guess
 
 # true results
-data_result = matread("$path/growing_like_china_replication_project/data_appendix/matlab/matlab/data_result.mat")
+% URL of the MAT file on GitHub
+url = 'https://github.com/xuyuxuan2570/GLC_Replication.jl/tree/main/growing_like_china_replication_project/data_appendix/matlab/matlab/data_result.mat'
+
+% Read the MAT file from the URL
+data_result = matread(url)
 
 m_t = transpose(data_result["m_t"])
 w_t = transpose(data_result["w_t"])
